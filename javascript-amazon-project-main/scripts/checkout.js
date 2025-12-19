@@ -1,6 +1,6 @@
   import {cart, removeFromCart} from '../data/cart.js';
   import { products } from '../data/products.js';
-  import { formatCurrrncy } from './utils/money.js';
+  import { formatCurrency } from './utils/money.js';
 
   let cartSummaryHTML = '';
 
@@ -16,9 +16,9 @@
     });
 
   
-    cartSummaryHTML +=`
+    cartSummaryHTML += `
       <div class="cart-item-container 
-      js-cart-item-container-${matchingproduct.id}">
+      js-cart-item-container">
               <div class="delivery-date">
                 Delivery date: Tuesday, June 21
               </div>
@@ -27,12 +27,12 @@
                 <img class="product-image"
                   src="${matchingproduct.image}">
 
-                <div class="cart-item-details">
+                <div class="cart-item-details"> 
                   <div class="product-name">
                     ${matchingproduct.name}
                   </div>
                   <div class="product-price">
-                    $${formatCurrrncy(matchingproduct.priceCents)}
+                    $${formatCurrency(matchingproduct.priceCents)}
                   </div>
                   <div class="product-quantity">
                     <span>
